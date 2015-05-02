@@ -1,38 +1,33 @@
 <?php include_once '_header-ptbr.php' ?>
 
-<h3 id="top">Configuration Files</h3>
+<h3 id="top">Arquivos de Configuração</h3>
 
-<h4>Related Files and Videos</h4>
+<h4>Arquivos e Vídeos Relecionados</h4>
 
 <ul class="nobullets">
-	<li><i class="icon-play"></i> <a href="#video1Modal" data-toggle="modal">Basic Training Video #1: File Structure</a></li>
+	<li><i class="icon-play"></i> <a href="#video1Modal" data-toggle="modal">Treinamento Básico - Vídeo #1: Estrutura de Arquivos</a></li>
 </ul>
 
 <div id="video1Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="video1Label" aria-hidden="true">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		<h3 id="myModalLabel">Phreeze Training Video</h3>
+		<h3 id="myModalLabel">Phreeze - Vídeo de Treinamento</h3>
 	</div>
 	<div class="modal-body">
 		<iframe width="530" height="298" src="http://www.youtube.com/embed/obIfetsy5Is" frameborder="0" allowfullscreen></iframe>
 	</div>
 	<div class="modal-footer">
-		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
 	</div>
 </div>
 
-<h4 id="overview">Overview</h4>
+<h4 id="overview">Visão Geral</h4>
 
 <img src="images/config.png" class="pull-right" />
 
-<p>An application generated with Phreeze Builder will have three configuration files which are 
-important to understand in order to customize and deploy your application.</p>
+<p>Uma aplicação gerada com o Phreeze Builder terá três arquivos de configuração que são importantes que você entenda para poder customizar e disponibilizar sua aplicação.</p>
 
-<p>When the Phreeze application executes, index.php is called.  The index file is very short and
-has a single purpose, which is to initialize the <a href="dispatcher-ptbr.php">Dispatcher</a>.  The Dispatcher
-then determines which Controller + Method to call.  Before index.php can perform this function,
-various framework classes need to be included and instantiated.  index.php relies on three configuration files
-to handle this and they are loaded in the following order:</p>
+<p>Quando a aplicação Phreeze executa, o arquivo index.php é chamado. O arquivo index é muito pequeno e tem um único propósito, que é inicializar o <a href="dispatcher-ptbr.php">Dispatcher</a>.  O Dispatcher então determina quais  Controller + Method chamar. Antes que o  index.php possa executar esta função, várias classes do framework precisam ser incluídas e instanciadas.  index.php trabalha com três aquivos de configuração que são carregados na seguinte ordem:</p>
 
 <ol>
 <li><a href="#global">_global_config.php</a></li>
@@ -40,18 +35,12 @@ to handle this and they are loaded in the following order:</p>
 <li><a href="#machine">_machine_config.php</a></li>
 </ol>
 
-<p>There is nothing magical about the name of these files and you are free to customize, 
-combine or rename them as necessary.  However, these configuration files were organized 
-this way for the purpose of allowing a development team to work on a shared code base
-in a version control system (git, svn, etc) without creating conflicts.</p>
+<p>Não há nada de mágico sobre o nome destes arquivos e você está livre para customizá-los, combiná-los ou renomeá-los caso seja necessário. No entanto, estes arquivos de configuração desta maneira com o propósito de permitir que uma equipe de desenvolvimento possa trabalhar com uma base de código compartilhado em um sistema de controle de versão (git, svn, etc) sem criar conflitos.</p>
 
 <h4 id="global">_global_config.php</h4>
 
-<p>The global configuration file defines a singleton factory class <b>GlobalConfig</b> which is responible for
-instantiating all of the various components needed by the framework.  The framework needs various 
-objects in order to do its work: A Phreezer object, a Router, a RenderEngine and a
-Context (ie session).  You can think of GlobalConfig as a container for all of the 
-various subcomponents of the Phreeze framework.</p>
+<p>O arquivo de configuração global dfine uma singleton factory class <b>GlobalConfig</b> que é responsável por instanciar os diversos componentes necessários para o framework.  O framework precisa de diversos objetos prontos para poder trabalhar: Um Phreezer object, um Router, um RenderEngine e um
+Context (ie session).  Você pode pensar no  GlobalConfig como um container para todos os vários subcomponentes do  Phreeze framework.</p>
 
 <p>The reason this file is loaded first is because it creates the GlobalConfig object that 
 contains all of the static properties and factory methods.  The other two configuration files, 
