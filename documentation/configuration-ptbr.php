@@ -42,25 +42,16 @@
 <p>O arquivo de configuração global dfine uma singleton factory class <b>GlobalConfig</b> que é responsável por instanciar os diversos componentes necessários para o framework.  O framework precisa de diversos objetos prontos para poder trabalhar: Um Phreezer object, um Router, um RenderEngine e um
 Context (ie session).  Você pode pensar no  GlobalConfig como um container para todos os vários subcomponentes do  Phreeze framework.</p>
 
-<p>The reason this file is loaded first is because it creates the GlobalConfig object that 
-contains all of the static properties and factory methods.  The other two configuration files, 
-for the most part, set and change GlobalConfig's property values.</p>
+<p>A razão pela qual este arquivo é carregado primeiro é porque ele cria o objeto GlobalGonfig que contém todas as propriedades estáticas e métodos de  factory.  Os outros dois arquivos de configuração, basicamente, configuram e alteram as proprioedades do GlobalConfig.</p>
 
-<p>GlobalConfig is also a convenient place for you to store system-wide variables 
-such as API credentials, mail server settings, etc.  Although it is recommended
-that you only <i>define</i> the variables here, and then set their values either in 
-_app_config.php or _machine_config.php as appropriate.</p>
+<p>GlobalConfig é também um local conviniente para armazenar as variáveis globais do sistema, tais como as API credentials, mail server settings, etc.  No entanto, recomenda-se que você apenas <i>defina</i> as variáveis aqui, e então configure os seus valores nos arquivos _app_config.php ou _machine_config.php como achar mais adequado.</p>
 
 <h4 id="app">_app_config.php</h4>
 
-<p>_app_config.php is the file where the PHP include path is configured, the RenderEngine
-is specified and <a href="routes-ptbr.php">routes</a> are defined.  This is a file that you will almost 
-certainly customize in order to add, remove and change routes.</p>
+<p>_app_config.php é o arquivo onde o PHP include path é configurado, o RenderEngine é especificado e os <a href="routes-ptbr.php">routes</a> são definidos. Este é o arquivo que você certamente customizará para poder adicionar, remover ou mudar os routes.</p>
 
-<p>The application configuration file should only contain settings that pertain to the application
-<i>regardless of which environment it is running</i>.  What this means is that you only should put
-settings in this file if the values would be the same on localhost, staging and production servers.
-For example, your routes and the RenderEngine used by the application will be the same regardless of 
+<p>O arquivo de configuração da aplicação deve conter apenas configurações referentes à aplicação <i>independente do ambiente em que estiver rodadndo</i>. O que significa que você deve colocar neste arquivo apenas valores que sejam os mesmos tanto no localhost, staging and production servers.
+For example, your routes and the RenderEngine used by thepplication will be the same regardless of 
 whether it is moved from one machine to another.  The application configuration settings should not have
 to be customized or tweaked from one machine to the next.</p>
 
